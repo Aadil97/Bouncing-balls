@@ -35,8 +35,10 @@ function Ball(x, y, velX, velY, color, size) {
             var dy = this.y - balls[j].y;
             var distance = Math.sqrt(dx * dx + dy * dy);
       
-            if (distance < this.size + balls[j].size) {
+            if (distance+1 < this.size + balls[j].size) {
               balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+              balls[j].velX = -balls[j].velX;
+              balls[j].velY = -balls[j].velY;
             }
           }
         }
@@ -62,7 +64,7 @@ function Ball(x, y, velX, velY, color, size) {
     this.y += this.velY;
   }
 
-  while (balls.length < 30) {
+  while (balls.length < 25) {
     var size = random(10,20);
     var ball = new Ball(
       // ball position always drawn at least one ball width
