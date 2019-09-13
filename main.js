@@ -62,7 +62,7 @@ function Ball(x, y, velX, velY, color, size) {
     this.y += this.velY;
   }
 
-  while (balls.length < 3) {
+  while (balls.length < 100) {
     var size = random(10,20);
     var ball = new Ball(
       // ball position always drawn at least one ball width
